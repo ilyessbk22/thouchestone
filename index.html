@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-commerce Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>E-Shop</h1>
+    <nav>
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="products" class="section">
+      <h2>Our Products</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="shoes.png" alt="Shoes" />
+          <h3>Shoes</h3>
+          <p>$49.99</p>
+          <button onclick="addToCart('Shoes', 49.99)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="t-shir.png" alt="T-shirt" />
+          <h3>T-shirt</h3>
+          <p>$19.99</p>
+          <button onclick="addToCart('T-shirt', 19.99)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="jacket.jpg" alt="Jacket" />
+          <h3>Jacket</h3>
+          <p>$89.99</p>
+          <button onclick="addToCart('Jacket', 89.99)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="perfume.jpg" alt="Perfume" />
+          <h3>Perfume</h3>
+          <p>$59.99</p>
+          <button onclick="addToCart('Perfume', 59.99)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cart" class="section">
+      <h2>Shopping Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-buttons">
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="processOrder()">Process Order</button>
+        <button onclick="showCustomOrderForm()">Custom Order</button>
+      </div>
+
+      <div id="custom-order" class="custom-order-form" style="display: none;">
+        <h3>Enter Custom Order</h3>
+        <input type="text" id="custom-name" placeholder="Item name" required />
+        <input type="number" id="custom-price" placeholder="Item price" step="0.01" required />
+        <button onclick="addCustomOrder()">Add Custom Order</button>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>Welcome to our E-Shop! We provide quality clothing and accessories at great prices.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <form onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-Shop</p>
+    <div>
+      <input type="email" id="subscribeEmail" placeholder="Subscribe with your email" />
+      <button onclick="subscribe()">Subscribe</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
